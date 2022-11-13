@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css"/>
+
+
+    <title>Document</title>
+  </head>
+  <body>
+   
+      <div class="principal">
+          
+          <form id="form">
+            <h1>Formulário</h1>
+          <div class="form-group">
+            <label for="nome">Nome: </label>
+            <input type="text" id="personid" placeholder="" name="nome" />
+            
+            <label for="idade">Idade: </label>
+            <input type="text" id="ageid" placeholder="" name="idade" />
+    
+            <label for="idade">Profissão: </label>
+            <input type="text" id="profectionid" placeholder="" name="profissão" />
+    
+            <label for="idade">Email: </label>
+            <input type="text" id="emailid" placeholder="" name="email" />
+    
+            <label for="idade">Telefone: </label>
+            <input type="text" id="foneid" placeholder="" name="telefone" />
+    
+            <label for="idade">Data de Preenchimento: </label>
+            <input type="text" id="dateid" placeholder="  /  /" name="dataPreench" />
+    
+            <input
+            type="submit"
+            class="confirmar"
+            
+            value="confirmar"
+            />
+    
+          </div>
+        </form>
+
+        <script>
+            
+            //1)
+              form.onsubmit = (event) =>{
+                event.preventDefault()
+                console.log({Nome: personid.value, Idade: ageid.value, Profissão: profectionid.value, Email: emailid.value, Telefone: foneid.value, DatadePreenchimento: dateid.value });
+                
+            //2)    
+                const user = [
+                  {name: "Fabiana Araújo", age: 33 },
+                  {name: "Gabriel Gomes", age: 25 },
+                  {name: "Fernanda Henrique", age: 17 },
+                  {name: "Ana Luiza", age: 2 },
+                  {name: "Geralda do Nascimento", age: 93 },
+                  {name: "Miguel Souza", age: 70 },
+                  {name: "Antonio Miguel", age: 69 },
+                ];
+               
+            //3)    
+                function searchuser (nome){
+                     for(let i = 0; i < user.length; i++){
+                        if(user[i].name === nome){
+                         return user[i];
+                       }
+                     }
+                     return "Usuario invalido"; 
+                     
+                   }  
+                   let search = searchuser(personid.value);
+                   console.log(search);
+                   
+            //4)       
+                   var Names = [];
+                  function shownames(){
+                   return user.map((user) => user.name)
+                  } 
+                  let justnames = shownames();
+                  console.log(justnames);
+
+            //5)      
+                  let personwithIds = [];
+                  function PassId(personwithIds){
+                    for(let i = 0; i < user.length; i++){
+                      let personwithId = {
+                        id: i+1, 
+                        ...user[i]
+                      }
+                      personwithIds.push(personwithId)
+                    }
+                    return personwithIds;
+                  }
+                  
+                  console.log(PassId(personwithIds));
+                  
+            //6)      
+                  function over18(){
+                    
+                    return user.filter((user) => user.age >18);
+
+                  }
+                  let overage = over18();
+                  console.log(overage);
+
+            //7)
+            function averages(){
+                      return user.map(item => item.age).reduce((prev, curr) => prev + curr, 0) / user.length;
+
+                    }
+                    let averageage = averages();
+                    console.log(averageage);
+                 
+                }
+          </script>
+
+           
+    </div>
+ 
+  </body>
+</html>

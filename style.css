@@ -1,0 +1,59 @@
+body{
+
+    background-color: rgb(200, 242, 173);
+}
+
+
+form {
+    font-family: Verdana,Tahoma,sans-serif;
+    font-size: 15px;
+    max-width: 100%;
+
+   
+}
+
+.principal { 
+    padding: 5em;
+    padding-top: 1em;
+    margin-top: 2em;
+    width: 250px; 
+    margin-left: auto;
+    margin-right: auto; 
+    border: 2px solid;
+    color: rgb(10, 10, 10);
+    border-radius: 40px;
+    background: rgb(7, 7, 7, 0.7);
+}
+
+input{
+    
+        width: 200px;
+        padding: 10px;
+        color: black;
+        margin-left: 2px;
+        margin-top: 10px;
+        border: 1px solid;
+        border-radius: 10px;
+        
+        
+}
+.form-group  input{
+    margin-bottom: 1em;
+    
+}
+.confirmar {
+    background-color: #a7d58e;
+    height: 40px;
+    width: 100px;
+    font-weight: bold;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid;
+    color: black;
+}
+
+h1{
+    padding: 20px;
+    
+}
